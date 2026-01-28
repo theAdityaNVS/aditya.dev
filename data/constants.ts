@@ -27,13 +27,15 @@ export const SKILLS: Skill[] = [
   { name: "Git / CI/CD", level: 90, category: "tools", icon: "git" },
 ];
 
+// Using reliable Unsplash Photo IDs
 export const PROJECTS: Project[] = [
   {
     id: "1",
     title: "Nexus - API Marketplace",
     description: "A full-stack platform for developers to sell and monetize APIs. Built with Next.js 14, implementing Stripe Connect for payouts and Kong for API gateway management. Features real-time usage analytics.",
     tags: ["Next.js", "PostgreSQL", "Stripe", "Kong API", "Tailwind"],
-    imageUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
+    // Image: Abstract Network/Data
+    imageUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop", 
     featured: true,
     githubUrl: "https://github.com/",
     demoUrl: "#"
@@ -43,17 +45,19 @@ export const PROJECTS: Project[] = [
     title: "StreamVibe - Live Streaming",
     description: "Interactive video streaming application leveraging WebRTC for sub-second latency. Supports RTMP ingestion via Node.js Media Server and HLS playback. Includes chat functionality powered by WebSocket.",
     tags: ["React", "Node.js", "WebRTC", "FFmpeg", "Socket.io"],
-    imageUrl: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=800",
+    // Image: Recording Studio/Microphone/High Tech
+    imageUrl: "https://images.unsplash.com/photo-1478737270239-2f02b77ac6d5?q=80&w=800&auto=format&fit=crop",
     featured: true,
     githubUrl: "https://github.com/",
     demoUrl: "#"
   },
   {
     id: "3",
-    title: "CodeSync - Collaborative Editor",
-    description: "Real-time collaborative code editor supporting 20+ languages. Uses CRDTs (Yjs) for conflict resolution and Monaco Editor. Deployed on AWS Fargate with Redis for session state management.",
-    tags: ["React", "Yjs", "Monaco", "AWS Fargate", "Redis"],
-    imageUrl: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800",
+    title: "FinLedger - Distributed Transaction System",
+    description: "High-throughput distributed ledger system designed for financial reconciliation. Implements Kafka for event streaming and optimistic locking for concurrency control. Handles 5000+ transactions/sec.",
+    tags: ["Java", "Spring Boot", "Kafka", "PostgreSQL", "Docker"],
+    // Image: Financial Data/Charts/Dashboard
+    imageUrl: "https://images.unsplash.com/photo-1611974765270-ca12586343bb?q=80&w=800&auto=format&fit=crop",
     featured: false,
     githubUrl: "https://github.com/"
   },
@@ -66,7 +70,7 @@ export const EXPERIENCE: Experience[] = [
     company: "JPMorgan Chase & Co.",
     period: "Oct 2025 - Present",
     description: "Specializing in building scalable enterprise applications using Spring Boot, React, and microservices architecture. Leveraging Amazon Web Services (AWS) and React.js to drive digital innovation.",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/JPMorgan_Chase_logo_2008.svg/1200px-JPMorgan_Chase_logo_2008.svg.png"
+    logo: "jpmc" // Using ID reference
   },
   {
     id: "2",
@@ -74,7 +78,7 @@ export const EXPERIENCE: Experience[] = [
     company: "Tata Consultancy Services",
     period: "Nov 2024 - Sep 2025",
     description: "Orchestrated backend microservice enhancements using Spring Boot, centralizing mobile and banking metrics. Established Docker-based prototyping environments reducing feature iteration times by 50%.",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Tata_Consultancy_Services_Logo.svg/1200px-Tata_Consultancy_Services_Logo.svg.png"
+    logo: "tcs"
   },
   {
     id: "3",
@@ -82,7 +86,7 @@ export const EXPERIENCE: Experience[] = [
     company: "Tata Consultancy Services",
     period: "May 2022 - Oct 2024",
     description: "Contributed to middleware components development integrating hospital supply chains. Optimized data-parsing workflows reducing errors by 30% and authored comprehensive REST API documentation.",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Tata_Consultancy_Services_Logo.svg/1200px-Tata_Consultancy_Services_Logo.svg.png"
+    logo: "tcs"
   },
   {
     id: "4",
@@ -90,7 +94,7 @@ export const EXPERIENCE: Experience[] = [
     company: "HackerEarth",
     period: "Jan 2022 - May 2022",
     description: "Authored 900+ MCQs demonstrating expertise in web development and cloud topics. Focused on Front-End Development and Cloud Computing content creation.",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/HackerEarth_logo.png/600px-HackerEarth_logo.png"
+    logo: "hackerearth"
   },
    {
     id: "5",
@@ -98,7 +102,7 @@ export const EXPERIENCE: Experience[] = [
     company: "HackerEarth",
     period: "Aug 2021 - Dec 2021",
     description: "Conducted technical content analysis focusing on Python programming and Cloud Computing domains.",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/HackerEarth_logo.png/600px-HackerEarth_logo.png"
+    logo: "hackerearth"
   },
   {
     id: "6",
@@ -106,7 +110,7 @@ export const EXPERIENCE: Experience[] = [
     company: "Lingo Jr",
     period: "Jul 2021 - Aug 2021",
     description: "Assisted in web development tasks using HTML and CSS, contributing to frontend interface improvements.",
-    logo: "https://ui-avatars.com/api/?name=Lingo+Jr&background=efefef&color=333&size=200"
+    logo: "lingojr"
   }
 ];
 

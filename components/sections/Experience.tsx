@@ -1,13 +1,66 @@
-import React from 'react';
-import { Briefcase, Building2, Calendar } from 'lucide-react';
+import React, { useMemo } from 'react';
+import { Calendar } from 'lucide-react';
 import { EXPERIENCE } from '../../data/constants';
-import DecryptedText from '../ui/DecryptedText';
 import TiltCard from '../ui/TiltCard';
+import { ChaseLogo, TCSLogo, HackerEarthLogo, LingoJrLogo, DefaultCompanyLogo } from '../ui/CompanyLogos';
 
 const Experience: React.FC = () => {
+  // Mapping logic to get the right logo component
+  const getLogoComponent = (logoId: string | undefined, companyName: string) => {
+    switch (logoId) {
+      case 'jpmc':
+        return <ChaseLogo />;
+      case 'tcs':
+        return <TCSLogo />;
+      case 'hackerearth':
+        return <HackerEarthLogo />;
+      case 'lingojr':
+        return <LingoJrLogo />;
+      default:
+        return <DefaultCompanyLogo name={companyName} />;
+    }
+  };
+
+  // Generate random bubbles with logos
+  const logoBubbles = useMemo(() => {
+    const logos = ['jpmc', 'tcs', 'hackerearth', 'lingojr'];
+    return Array.from({ length: 15 }).map((_, i) => ({
+        id: i,
+        logo: logos[i % logos.length],
+        size: Math.random() * 40 + 30, // 30px to 70px
+        left: `${Math.random() * 100}%`,
+        duration: `${Math.random() * 10 + 15}s`, // 15s to 25s
+        delay: `${Math.random() * 10}s`,
+        opacity: Math.random() * 0.1 + 0.05
+    }));
+  }, []);
+
   return (
-    <section id="experience" className="py-32 relative">
-      <div className="container mx-auto px-6">
+    <section id="experience" className="py-32 relative overflow-hidden">
+        {/* Floating Logo Bubbles Background */}
+        <div className="absolute inset-0 pointer-events-none z-0">
+            {logoBubbles.map((bubble) => (
+                <div
+                    key={bubble.id}
+                    className="absolute rounded-full flex items-center justify-center bg-white/5 backdrop-blur-sm border border-white/5 animate-fly"
+                    style={{
+                        width: bubble.size,
+                        height: bubble.size,
+                        left: bubble.left,
+                        animationDuration: bubble.duration,
+                        animationDelay: bubble.delay,
+                        opacity: bubble.opacity,
+                        top: '100%' // Start from bottom
+                    }}
+                >
+                    <div className="w-[60%] h-[60%] opacity-70 grayscale">
+                        {getLogoComponent(bubble.logo, '')}
+                    </div>
+                </div>
+            ))}
+        </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="mb-20">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
             Work Experience
@@ -49,25 +102,9 @@ const Experience: React.FC = () => {
 
                       <div className="flex items-start justify-between mb-4">
                           <div className="flex items-center gap-4">
-                              {/* Logo Container - Adjusted for wider logos */}
-                              <div className="h-14 w-20 rounded-xl bg-white p-2 flex items-center justify-center border border-white/10 shadow-inner overflow-hidden shrink-0">
-                                  {job.logo ? (
-                                    <img 
-                                      src={job.logo} 
-                                      alt={`${job.company} logo`} 
-                                      className="w-full h-full object-contain"
-                                      onError={(e) => {
-                                        // Fallback if image fails
-                                        e.currentTarget.style.display = 'none';
-                                        e.currentTarget.parentElement?.classList.add('bg-slate-800');
-                                        const icon = document.createElement('div');
-                                        icon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>';
-                                        e.currentTarget.parentElement?.appendChild(icon);
-                                      }}
-                                    />
-                                  ) : (
-                                    <Building2 size={24} className="text-darker" />
-                                  )}
+                              {/* Logo Container */}
+                              <div className="h-14 w-20 rounded-xl bg-transparent flex items-center justify-center shrink-0 overflow-hidden shadow-sm">
+                                  {getLogoComponent(job.logo, job.company)}
                               </div>
                               <div className="flex-1">
                                   <h3 className="text-xl font-bold text-white leading-tight">{job.role}</h3>

@@ -31,6 +31,7 @@
               'blob': 'blob 10s infinite',
               'float': 'float 6s ease-in-out infinite',
               'shine': 'shine 8s linear infinite',
+              'fly': 'fly 15s linear infinite',
             },
             keyframes: {
               blob: {
@@ -46,6 +47,13 @@
               shine: {
                 '0%': { backgroundPosition: '200% center' },
                 '100%': { backgroundPosition: '-200% center' },
+              },
+              fly: {
+                '0%': { top: '100%', opacity: '0', transform: 'scale(0.5) translateX(0)' },
+                '10%': { opacity: '0.4', transform: 'scale(0.8) translateX(10px)' },
+                '50%': { transform: 'scale(1) translateX(-10px)' },
+                '90%': { opacity: '0.4', transform: 'scale(1.1) translateX(10px)' },
+                '100%': { top: '-20%', opacity: '0', transform: 'scale(1.2) translateX(0)' },
               }
             }
           }
@@ -59,6 +67,23 @@
         overflow-x: hidden;
       }
       
+      /* Technical Grid Background (Terminal Style) */
+      .bg-grid {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -2;
+        background-image: 
+          linear-gradient(to right, rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+        background-size: 50px 50px;
+        mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+        -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+        pointer-events: none;
+      }
+
       /* Liquid Backgrounds */
       .liquid-bg {
         position: fixed;
@@ -177,6 +202,7 @@
 </script>
 </head>
   <body>
+    <div class="bg-grid"></div>
     <div class="liquid-bg">
       <div class="absolute top-0 left-0 w-[50vw] h-[50vh] bg-primary/20 rounded-full blur-[120px] mix-blend-screen animate-blob"></div>
       <div class="absolute bottom-0 right-0 w-[50vw] h-[50vh] bg-secondary/20 rounded-full blur-[120px] mix-blend-screen animate-blob animation-delay-2000"></div>

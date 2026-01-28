@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Code, Database, Server, Wrench, Cpu, Globe, Layers, Smartphone, Layout, PenTool, Braces } from 'lucide-react';
 import { SKILLS, SERVICES } from '../../data/constants';
 import TiltCard from '../ui/TiltCard';
@@ -30,9 +30,48 @@ const Skills: React.FC = () => {
     return <Code />;
   };
 
+  // Generate random bubbles with tech icons
+  const skillBubbles = useMemo(() => {
+    // List of keys from Icons.tsx + generic lucide
+    const techKeys = ['react', 'java', 'springboot', 'aws', 'docker', 'redis', 'mongodb', 'typescript'];
+    
+    return Array.from({ length: 18 }).map((_, i) => ({
+        id: i,
+        icon: techKeys[i % techKeys.length],
+        size: Math.random() * 50 + 20, // 20px to 70px
+        left: `${Math.random() * 100}%`,
+        duration: `${Math.random() * 15 + 15}s`, // 15s to 30s
+        delay: `${Math.random() * 8}s`,
+        opacity: Math.random() * 0.1 + 0.02 // Very subtle
+    }));
+  }, []);
+
   return (
-    <section id="skills" className="py-32 relative">
-      <div className="container mx-auto px-6">
+    <section id="skills" className="py-32 relative overflow-hidden">
+        {/* Floating Tech Bubbles Background */}
+        <div className="absolute inset-0 pointer-events-none z-0">
+            {skillBubbles.map((bubble) => (
+                <div
+                    key={bubble.id}
+                    className="absolute rounded-full flex items-center justify-center bg-white/5 backdrop-blur-sm border border-white/5 animate-fly"
+                    style={{
+                        width: bubble.size,
+                        height: bubble.size,
+                        left: bubble.left,
+                        animationDuration: bubble.duration,
+                        animationDelay: bubble.delay,
+                        opacity: bubble.opacity,
+                        top: '100%' // Start from bottom
+                    }}
+                >
+                    <div className="w-[50%] h-[50%] opacity-50 text-white">
+                        {getTechIcon(bubble.icon)}
+                    </div>
+                </div>
+            ))}
+        </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="mb-20">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
               What I Do
