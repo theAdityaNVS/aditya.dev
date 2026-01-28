@@ -22,7 +22,7 @@ export const SKILLS: Skill[] = [
   { name: "Tailwind CSS", level: 95, category: "frontend", icon: "palette" },
   { name: "Node.js / Express", level: 85, category: "backend", icon: "server" },
   { name: "MongoDB / SQL", level: 80, category: "backend", icon: "database" },
-  { name: "Gemini API", level: 85, category: "ai", icon: "sparkles" },
+  { name: "Gemini / OpenAI", level: 85, category: "ai", icon: "sparkles" },
   { name: "Docker / AWS", level: 70, category: "tools", icon: "container" },
   { name: "Git / CI/CD", level: 85, category: "tools", icon: "git-branch" },
 ];
@@ -30,53 +30,61 @@ export const SKILLS: Skill[] = [
 export const PROJECTS: Project[] = [
   {
     id: "1",
-    title: "Nebula Dashboard",
-    description: "A real-time analytics dashboard powered by AI for predictive insights. Features dark mode, drag-and-drop widgets, and natural language query processing.",
-    tags: ["React", "TypeScript", "Gemini API", "Recharts"],
+    title: "AI-Powered SaaS Starter",
+    description: "A comprehensive Next.js boilerplate featuring authentication, payment integration (Stripe), and AI text generation endpoints. Designed for rapid startup deployment.",
+    tags: ["Next.js", "TypeScript", "Prisma", "Stripe"],
     imageUrl: "https://picsum.photos/800/600?random=1",
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/theAdityaNVS/saas-starter",
     featured: true,
   },
   {
     id: "2",
-    title: "EcoMarket",
-    description: "A sustainable e-commerce marketplace built with the MERN stack. Includes geolocation features, payment processing with Stripe, and AI product recommendations.",
-    tags: ["MongoDB", "Express", "React", "Node.js"],
+    title: "Real-time Collab Platform",
+    description: "A collaborative whiteboard application allowing multiple users to draw and chat in real-time. Built with WebSockets for low-latency communication.",
+    tags: ["React", "Socket.io", "Node.js", "Redis"],
     imageUrl: "https://picsum.photos/800/600?random=2",
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/theAdityaNVS/collab-platform",
     featured: true,
   },
   {
     id: "3",
-    title: "DevFlow CLI",
-    description: "A command-line tool for developers to scaffold projects and manage cloud deployments efficiently. Written in Rust and wrapped for Node.js.",
-    tags: ["Rust", "Node.js", "CLI"],
+    title: "E-Commerce Microservices",
+    description: "A scalable backend architecture for high-traffic e-commerce sites. Decomposed into microservices for orders, inventory, and users using Docker.",
+    tags: ["Node.js", "Docker", "Kubernetes", "MongoDB"],
     imageUrl: "https://picsum.photos/800/600?random=3",
     featured: false,
+    githubUrl: "https://github.com/theAdityaNVS/ecommerce-backend"
   },
 ];
 
 export const EXPERIENCE: Experience[] = [
   {
     id: "1",
-    role: "Senior Frontend Engineer",
-    company: "TechNova Corp",
-    period: "2021 - Present",
-    description: "Leading the frontend team in migrating legacy monoliths to micro-frontends using React and Module Federation. Improved performance by 40%.",
+    role: "Senior Full Stack Engineer",
+    company: "TechNova Solutions",
+    period: "2022 - Present",
+    description: "Spearheading the migration of legacy monoliths to microservices. Implemented a new design system reducing development time by 30%. Mentored junior developers on React patterns.",
   },
   {
     id: "2",
-    role: "Full Stack Developer",
-    company: "Creative Solutions Studio",
-    period: "2019 - 2021",
-    description: "Built custom web applications for high-profile clients using the MERN stack. Integrated complex 3D animations using Three.js.",
+    role: "Software Developer",
+    company: "Innovate Digital",
+    period: "2020 - 2022",
+    description: "Developed and maintained multiple client-facing web applications. Optimized database queries in MongoDB, resulting in a 40% reduction in API response times.",
+  },
+  {
+    id: "3",
+    role: "Frontend Developer Intern",
+    company: "StartUp Inc",
+    period: "2019 - 2020",
+    description: "Collaborated with UI/UX designers to implement responsive landing pages. Gained hands-on experience with Redux state management and RESTful API integration.",
   },
 ];
 
 export const SOCIALS: SocialLink[] = [
-  { platform: "GitHub", url: "https://github.com", icon: "github" },
-  { platform: "LinkedIn", url: "https://linkedin.com", icon: "linkedin" },
+  { platform: "GitHub", url: "https://github.com/theAdityaNVS", icon: "github" },
+  { platform: "LinkedIn", url: "https://www.linkedin.com/in/theadityanvs/", icon: "linkedin" },
   { platform: "Twitter", url: "https://twitter.com", icon: "twitter" },
 ];

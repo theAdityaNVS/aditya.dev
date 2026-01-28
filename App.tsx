@@ -2,9 +2,9 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
+import Experience from './components/Experience';
 import Projects from './components/Projects';
 import AIAssistant from './components/AIAssistant';
-import DeploymentRoadmap from './components/DeploymentRoadmap';
 import Contact from './components/Contact';
 import ScrollReveal from './components/ScrollReveal';
 
@@ -24,11 +24,13 @@ const App: React.FC = () => {
         </ScrollReveal>
         
         <ScrollReveal>
+          <Experience />
+        </ScrollReveal>
+
+        <ScrollReveal>
           <Projects />
         </ScrollReveal>
 
-        <DeploymentRoadmap />
-        
         <ScrollReveal>
           <AIAssistant />
         </ScrollReveal>
