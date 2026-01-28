@@ -1,7 +1,6 @@
 import React from 'react';
 import { ExternalLink, Github, ArrowRight } from 'lucide-react';
 import { PROJECTS } from '../../data/constants';
-import DecryptedText from '../ui/DecryptedText';
 import TiltCard from '../ui/TiltCard';
 
 const Projects: React.FC = () => {
@@ -11,7 +10,7 @@ const Projects: React.FC = () => {
         <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
             <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
-              <DecryptedText text="Featured Projects" />
+              Featured Projects
             </h2>
             <div className="h-1 w-20 bg-gradient-to-r from-primary to-transparent rounded-full"></div>
           </div>

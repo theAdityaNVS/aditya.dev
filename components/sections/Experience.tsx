@@ -1,7 +1,6 @@
 import React from 'react';
 import { Briefcase, Building2, Calendar } from 'lucide-react';
 import { EXPERIENCE } from '../../data/constants';
-import DecryptedText from '../ui/DecryptedText';
 import TiltCard from '../ui/TiltCard';
 
 const Experience: React.FC = () => {
@@ -10,7 +9,7 @@ const Experience: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="mb-20">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
-            <DecryptedText text="Work Experience" />
+            Work Experience
           </h2>
           <div className="h-1 w-20 bg-gradient-to-r from-primary to-transparent rounded-full"></div>
         </div>

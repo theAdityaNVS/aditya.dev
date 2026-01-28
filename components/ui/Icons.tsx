@@ -10,6 +10,29 @@ export const Icons: Record<string, React.ReactNode> = {
       <ellipse rx="10" ry="4.5" transform="rotate(120 12 12)" stroke="currentColor" strokeWidth="1.5"/>
     </svg>
   ),
+  java: (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+      <path d="M4.5 17C6.5 19 12 19 12 19C12 19 17.5 19 19.5 17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M6 14C7.5 15.5 12 15.5 12 15.5C12 15.5 16.5 15.5 18 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M15.5 4C15.5 4 14 6 12 6C10 6 8.5 4 8.5 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M17 7C17 7 15 10 12 10C9 10 7 7 7 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+    </svg>
+  ),
+  springboot: (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+      <path d="M12 2L4 6.5V17.5L12 22L20 17.5V6.5L12 2Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
+      <path d="M12 6V12L16 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M8 14C8 14 9.5 16 12 16C14.5 16 16 14 16 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+    </svg>
+  ),
+  aws: (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+      <path d="M18 16C18 16 15 18 12 18C9 18 6 16 6 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M12 13L15 9M9 9L12 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M4 12C4 12 5 7 12 7C19 7 20 12 20 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M18.5 14.5L19.5 13.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+    </svg>
+  ),
   typescript: (
     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
       <path d="M2 5C2 3.34315 3.34315 2 5 2H19C20.6569 2 22 3.34315 22 5V19C22 20.6569 20.6569 22 19 22H5C3.34315 22 2 20.6569 2 19V5Z" fill="currentColor" fillOpacity="0.1"/>
@@ -67,4 +90,20 @@ export const Icons: Record<string, React.ReactNode> = {
       <path d="M18 16V14C18 12 12 12 12 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
     </svg>
   ),
+  sql: (
+     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+       <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="1.5"/>
+       <path d="M12 7V17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+       <path d="M8 12H16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+       <path d="M15 9L18 12L15 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+     </svg>
+  ),
+  redis: (
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+        <path d="M12 3L4 7.5V16.5L12 21L20 16.5V7.5L12 3Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
+        <path d="M12 12L12 21" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M12 12L4 7.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M12 12L20 7.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+      </svg>
+  )
 };

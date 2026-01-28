@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const period = 2000;
   
-  const toRotate = [ "Full Stack Developer", "MERN Specialist", "UI/UX Engineer", "AI Integrator" ];
+  const toRotate = [ "Java Full Stack Developer", "Spring Boot Expert", "Cloud Architect", "React Specialist" ];
 
   useEffect(() => {
     let ticker = setInterval(() => {
@@ -57,7 +57,7 @@ const Hero: React.FC = () => {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                 </span>
-                <span className="text-slate-200 font-medium text-xs tracking-wider uppercase">Available for Hire</span>
+                <span className="text-slate-200 font-medium text-xs tracking-wider uppercase">Open to Opportunities</span>
             </div>
             
             <h1 className="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-[1.1] animate-[fadeIn_1.2s_ease-out] tracking-tight">

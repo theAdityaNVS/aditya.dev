@@ -1,7 +1,6 @@
 import React from 'react';
 import { Code, Database, Server, Wrench, Cpu, Globe, Layers, Smartphone, Layout, PenTool, Braces } from 'lucide-react';
 import { SKILLS, SERVICES } from '../../data/constants';
-import DecryptedText from '../ui/DecryptedText';
 import TiltCard from '../ui/TiltCard';
 import { Icons } from '../ui/Icons';
 
@@ -36,7 +35,7 @@ const Skills: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="mb-20">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
-              <DecryptedText text="What I Do" />
+              What I Do
             </h2>
             <div className="h-1 w-20 bg-gradient-to-r from-primary to-transparent rounded-full"></div>
         </div>
@@ -64,7 +63,7 @@ const Skills: React.FC = () => {
         {/* Tech Stack Marquee / Cloud */}
         <div className="text-center mb-12">
             <h3 className="text-2xl font-display font-bold text-white mb-8">
-              <DecryptedText text="Technical Proficiency" />
+              Technical Proficiency
             </h3>
         </div>
 
