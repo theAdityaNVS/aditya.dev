@@ -1,6 +1,7 @@
 import React from 'react';
 import { Briefcase, Building2, Calendar } from 'lucide-react';
 import { EXPERIENCE } from '../../data/constants';
+import DecryptedText from '../ui/DecryptedText';
 import TiltCard from '../ui/TiltCard';
 
 const Experience: React.FC = () => {
@@ -47,11 +48,28 @@ const Experience: React.FC = () => {
                       </div>
 
                       <div className="flex items-start justify-between mb-4">
-                          <div className="flex items-center gap-3">
-                              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center border border-white/10 text-white shadow-inner">
-                                  <Building2 size={20} />
+                          <div className="flex items-center gap-4">
+                              {/* Logo Container - Adjusted for wider logos */}
+                              <div className="h-14 w-20 rounded-xl bg-white p-2 flex items-center justify-center border border-white/10 shadow-inner overflow-hidden shrink-0">
+                                  {job.logo ? (
+                                    <img 
+                                      src={job.logo} 
+                                      alt={`${job.company} logo`} 
+                                      className="w-full h-full object-contain"
+                                      onError={(e) => {
+                                        // Fallback if image fails
+                                        e.currentTarget.style.display = 'none';
+                                        e.currentTarget.parentElement?.classList.add('bg-slate-800');
+                                        const icon = document.createElement('div');
+                                        icon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>';
+                                        e.currentTarget.parentElement?.appendChild(icon);
+                                      }}
+                                    />
+                                  ) : (
+                                    <Building2 size={24} className="text-darker" />
+                                  )}
                               </div>
-                              <div>
+                              <div className="flex-1">
                                   <h3 className="text-xl font-bold text-white leading-tight">{job.role}</h3>
                                   <p className="text-primary font-medium text-sm">{job.company}</p>
                               </div>

@@ -30,27 +30,32 @@ export const SKILLS: Skill[] = [
 export const PROJECTS: Project[] = [
   {
     id: "1",
-    title: "Healthcare Supply Chain Middleware",
-    description: "Optimized middleware for hospital supply chains using Spring Boot, integrating multiple vendor systems. Reduced errors by 30% and supported scalable analytics for 1M+ records via Redis and JPA.",
-    tags: ["Java", "Spring Boot", "Redis", "MySQL"],
-    imageUrl: "https://picsum.photos/800/600?random=1",
+    title: "Nexus - API Marketplace",
+    description: "A full-stack platform for developers to sell and monetize APIs. Built with Next.js 14, implementing Stripe Connect for payouts and Kong for API gateway management. Features real-time usage analytics.",
+    tags: ["Next.js", "PostgreSQL", "Stripe", "Kong API", "Tailwind"],
+    imageUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
     featured: true,
+    githubUrl: "https://github.com/",
+    demoUrl: "#"
   },
   {
     id: "2",
-    title: "AI Chatbot & Analytics Dashboard",
-    description: "Co-designed a responsive frontend chatbot interface integrated with LLM APIs and D3.js visualizations. Boosted resolution rates by 35% and improved dashboard load times by 45%.",
-    tags: ["React.js", "D3.js", "LLM APIs", "Docker"],
-    imageUrl: "https://picsum.photos/800/600?random=2",
+    title: "StreamVibe - Live Streaming",
+    description: "Interactive video streaming application leveraging WebRTC for sub-second latency. Supports RTMP ingestion via Node.js Media Server and HLS playback. Includes chat functionality powered by WebSocket.",
+    tags: ["React", "Node.js", "WebRTC", "FFmpeg", "Socket.io"],
+    imageUrl: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=800",
     featured: true,
+    githubUrl: "https://github.com/",
+    demoUrl: "#"
   },
   {
     id: "3",
-    title: "Banking Microservices System",
-    description: "Orchestrated backend microservice enhancements centralizing mobile and banking metrics through secure REST APIs. Achieved 25% data reliability gains and 50% faster feature iterations.",
-    tags: ["Spring Boot", "PostgreSQL", "Microservices", "REST API"],
-    imageUrl: "https://picsum.photos/800/600?random=3",
+    title: "CodeSync - Collaborative Editor",
+    description: "Real-time collaborative code editor supporting 20+ languages. Uses CRDTs (Yjs) for conflict resolution and Monaco Editor. Deployed on AWS Fargate with Redis for session state management.",
+    tags: ["React", "Yjs", "Monaco", "AWS Fargate", "Redis"],
+    imageUrl: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800",
     featured: false,
+    githubUrl: "https://github.com/"
   },
 ];
 
@@ -58,9 +63,10 @@ export const EXPERIENCE: Experience[] = [
   {
     id: "1",
     role: "Full Stack Developer",
-    company: "JPMorganChase",
+    company: "JPMorgan Chase & Co.",
     period: "Oct 2025 - Present",
     description: "Specializing in building scalable enterprise applications using Spring Boot, React, and microservices architecture. Leveraging Amazon Web Services (AWS) and React.js to drive digital innovation.",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/JPMorgan_Chase_logo_2008.svg/1200px-JPMorgan_Chase_logo_2008.svg.png"
   },
   {
     id: "2",
@@ -68,6 +74,7 @@ export const EXPERIENCE: Experience[] = [
     company: "Tata Consultancy Services",
     period: "Nov 2024 - Sep 2025",
     description: "Orchestrated backend microservice enhancements using Spring Boot, centralizing mobile and banking metrics. Established Docker-based prototyping environments reducing feature iteration times by 50%.",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Tata_Consultancy_Services_Logo.svg/1200px-Tata_Consultancy_Services_Logo.svg.png"
   },
   {
     id: "3",
@@ -75,6 +82,7 @@ export const EXPERIENCE: Experience[] = [
     company: "Tata Consultancy Services",
     period: "May 2022 - Oct 2024",
     description: "Contributed to middleware components development integrating hospital supply chains. Optimized data-parsing workflows reducing errors by 30% and authored comprehensive REST API documentation.",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Tata_Consultancy_Services_Logo.svg/1200px-Tata_Consultancy_Services_Logo.svg.png"
   },
   {
     id: "4",
@@ -82,6 +90,7 @@ export const EXPERIENCE: Experience[] = [
     company: "HackerEarth",
     period: "Jan 2022 - May 2022",
     description: "Authored 900+ MCQs demonstrating expertise in web development and cloud topics. Focused on Front-End Development and Cloud Computing content creation.",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/HackerEarth_logo.png/600px-HackerEarth_logo.png"
   },
    {
     id: "5",
@@ -89,6 +98,7 @@ export const EXPERIENCE: Experience[] = [
     company: "HackerEarth",
     period: "Aug 2021 - Dec 2021",
     description: "Conducted technical content analysis focusing on Python programming and Cloud Computing domains.",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/HackerEarth_logo.png/600px-HackerEarth_logo.png"
   },
   {
     id: "6",
@@ -96,6 +106,7 @@ export const EXPERIENCE: Experience[] = [
     company: "Lingo Jr",
     period: "Jul 2021 - Aug 2021",
     description: "Assisted in web development tasks using HTML and CSS, contributing to frontend interface improvements.",
+    logo: "https://ui-avatars.com/api/?name=Lingo+Jr&background=efefef&color=333&size=200"
   }
 ];
 
