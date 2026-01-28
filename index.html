@@ -132,15 +132,20 @@
         transition: 0.7s ease-in-out;
       }
 
-      /* Scroll Reveal Animations */
+      /* Scroll Reveal Animations - Bouncy Effect */
       .reveal {
         opacity: 0;
-        transform: translateY(30px);
-        transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+        transform: translateY(40px) scale(0.95);
+        transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       }
       .reveal.active {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
+      }
+      
+      /* 3D Transform Utility */
+      .transform-style-3d {
+        transform-style: preserve-3d;
       }
 
       /* Custom scrollbar */

@@ -1,5 +1,5 @@
 import { GoogleGenAI } from "@google/genai";
-import { RESUME_DATA, SKILLS, PROJECTS, EXPERIENCE } from '../constants';
+import { RESUME_DATA, SKILLS, PROJECTS, EXPERIENCE } from '../data/constants';
 
 // Construct a system prompt based on the static data
 const SYSTEM_INSTRUCTION = `
@@ -45,10 +45,6 @@ export const sendMessageToGemini = async (history: { role: 'user' | 'model'; tex
     throw new Error("API Key not configured");
   }
 
-  // Map history to the format expected by the SDK if needed, 
-  // but for simple single-turn or short context, we can just use generateContent with system instruction.
-  // For better chat context, we use the chat API.
-  
   const chat = client.chats.create({
     model: 'gemini-3-flash-preview',
     config: {

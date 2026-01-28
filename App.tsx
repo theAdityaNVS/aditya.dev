@@ -1,12 +1,13 @@
 import React from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Skills from './components/Skills';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
+import Navbar from './components/layout/Navbar';
+import Hero from './components/sections/Hero';
+import Skills from './components/sections/Skills';
+import Experience from './components/sections/Experience';
+import Projects from './components/sections/Projects';
 import AIAssistant from './components/AIAssistant';
-import Contact from './components/Contact';
-import ScrollReveal from './components/ScrollReveal';
+import Contact from './components/sections/Contact';
+import DeploymentRoadmap from './components/sections/DeploymentRoadmap';
+import ScrollReveal from './components/ui/ScrollReveal';
 
 const App: React.FC = () => {
   return (
@@ -29,6 +30,10 @@ const App: React.FC = () => {
 
         <ScrollReveal>
           <Projects />
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <DeploymentRoadmap />
         </ScrollReveal>
         
         <ScrollReveal>

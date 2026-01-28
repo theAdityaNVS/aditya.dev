@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Send, Bot, Sparkles, User, Loader2, AlertCircle, X, MessageCircle } from 'lucide-react';
+import { Send, Bot, Loader2, AlertCircle, X, MessageCircle } from 'lucide-react';
 import { sendMessageToGemini } from '../services/geminiService';
 import { Message } from '../types';
 import MagneticWrapper from './ui/MagneticWrapper';

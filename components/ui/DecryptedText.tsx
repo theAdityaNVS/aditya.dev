@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useInView } from 'framer-motion'; // We'll stick to standard React hooks if framer isn't installed, but let's use IntersectionObserver for broader compat without deps
 
 interface DecryptedTextProps {
   text: string;
@@ -11,11 +10,9 @@ const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234567
 
 const DecryptedText: React.FC<DecryptedTextProps> = ({ text, className = '', animateOnView = true }) => {
   const [displayText, setDisplayText] = useState(text);
-  const [isHovered, setIsHovered] = useState(false);
   const elementRef = useRef<HTMLSpanElement>(null);
   const hasAnimated = useRef(false);
 
-  // Simple intersection observer logic
   useEffect(() => {
     if (!animateOnView) return;
     

@@ -1,20 +1,29 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Nova Portfolio
 
-# Run and deploy your AI Studio app
+A futuristic, AI-powered developer portfolio built with React, TypeScript, and Tailwind CSS.
 
-This contains everything you need to run your app locally.
+## Features
 
-View your app in AI Studio: https://ai.studio/apps/drive/1S-8mh2ud8QZfw-KGxJUzPcvN733FWZ0n
+- **AI Assistant**: Integrated Gemini chatbot to answer questions about your resume.
+- **Glassmorphism UI**: Modern, sleek aesthetics with liquid backgrounds.
+- **Interactive Elements**: Magnetic buttons, 3D tilt cards, and decrypted text effects.
+- **Responsive**: Fully optimized for mobile and desktop.
 
-## Run Locally
+## Folder Structure
 
-**Prerequisites:**  Node.js
+```
+├── components/
+│   ├── layout/       # Navbar, Footer
+│   ├── sections/     # Main sections (Hero, Skills, Projects)
+│   ├── ui/           # Reusable UI components (TiltCard, Icons)
+│   └── AIAssistant.tsx
+├── data/             # Static content (constants.ts)
+├── types/            # TypeScript interfaces
+├── services/         # API integrations (Gemini)
+├── docs/             # Setup documentation
+└── App.tsx           # Main entry point
+```
 
+## Getting Started
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+See `docs/01-setup.md` for installation instructions.
