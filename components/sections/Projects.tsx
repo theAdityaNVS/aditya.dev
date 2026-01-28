@@ -19,7 +19,8 @@ const Projects: React.FC = () => {
   }, []);
 
   return (
-    <section id="projects" className="py-32 relative bg-darker/50 overflow-hidden">
+    // Removed bg-darker/50 so grid is visible
+    <section id="projects" className="py-32 relative overflow-hidden">
       {/* Floating Coding Icons Background */}
       <div className="absolute inset-0 pointer-events-none z-0">
           {iconBubbles.map((bubble) => (

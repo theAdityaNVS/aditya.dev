@@ -4,7 +4,8 @@ import { RESUME_DATA } from '../../data/constants';
 
 const Contact: React.FC = () => {
   return (
-    <section id="contact" className="py-24 bg-gradient-to-b from-darker to-dark">
+    // Changed background to semi-transparent to allow grid visibility
+    <section id="contact" className="py-24 bg-darker/30 backdrop-blur-sm">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           
@@ -49,7 +50,7 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          <form className="bg-slate-900 p-8 rounded-3xl border border-white/5 shadow-xl" onSubmit={(e) => e.preventDefault()}>
+          <form className="bg-slate-900/80 p-8 rounded-3xl border border-white/5 shadow-xl backdrop-blur-md" onSubmit={(e) => e.preventDefault()}>
             <div className="mb-6">
               <label htmlFor="name" className="block text-sm font-medium text-slate-400 mb-2">Name</label>
               <input type="text" id="name" className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="John Doe" />
