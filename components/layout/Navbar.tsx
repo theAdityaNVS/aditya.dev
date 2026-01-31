@@ -8,7 +8,8 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      // Reduced threshold to 10 for quicker reaction
+      setIsScrolled(window.scrollY > 10);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -24,25 +25,31 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 flex justify-center transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
-        isScrolled ? 'pt-4' : 'pt-8'
+      className={`fixed top-0 left-0 right-0 z-50 flex justify-center transition-all duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] ${
+        isScrolled ? 'pt-4' : 'pt-6 md:pt-8'
       }`}
     >
       <div
-        className={`
-          relative flex items-center justify-between transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]
-          ${isScrolled 
-            ? 'glass-gel w-[90%] md:w-auto md:min-w-[600px] rounded-full px-6 py-3' 
-            : 'w-full max-w-7xl px-6 py-4 bg-transparent'
-          }
-        `}
+        className="relative flex items-center justify-between transition-all duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1.0)]"
+        style={{
+          // Explicitly animating width properties for smoothness
+          width: isScrolled ? '600px' : '100%',
+          maxWidth: isScrolled ? '90%' : '80rem', // 80rem = max-w-7xl
+          borderRadius: isScrolled ? '9999px' : '0px',
+          padding: isScrolled ? '0.75rem 1.5rem' : '1rem 1.5rem',
+          backgroundColor: isScrolled ? 'rgba(2, 6, 23, 0.75)' : 'transparent',
+          backdropFilter: isScrolled ? 'blur(20px) saturate(180%)' : 'none',
+          borderWidth: '1px',
+          borderColor: isScrolled ? 'rgba(255, 255, 255, 0.15)' : 'transparent',
+          boxShadow: isScrolled ? '0 8px 32px 0 rgba(0, 0, 0, 0.37)' : 'none',
+        }}
       >
         {/* Logo */}
         <a href="#" className="flex items-center gap-2 group">
-          <div className={`p-1.5 rounded-lg transition-colors ${isScrolled ? 'bg-primary/20 text-primary' : 'bg-white/10 text-white'}`}>
+          <div className={`p-1.5 rounded-lg transition-colors duration-500 ${isScrolled ? 'bg-primary/20 text-primary' : 'bg-white/10 text-white'}`}>
              <Terminal className="h-5 w-5" />
           </div>
-          <span className={`font-display font-bold tracking-tight transition-all duration-300 ${isScrolled ? 'text-lg text-white' : 'text-xl md:text-2xl text-white'}`}>
+          <span className={`font-display font-bold tracking-tight transition-all duration-500 ${isScrolled ? 'text-lg text-white' : 'text-xl md:text-2xl text-white'}`}>
             ADITYA<span className="text-primary">.DEV</span>
           </span>
         </a>
@@ -67,11 +74,11 @@ const Navbar: React.FC = () => {
             </MagneticWrapper>
           ))}
           
-          <div className={`w-px h-6 mx-2 ${isScrolled ? 'bg-white/10' : 'bg-white/20'}`}></div>
+          <div className={`w-px h-6 mx-2 transition-colors duration-500 ${isScrolled ? 'bg-white/10' : 'bg-white/20'}`}></div>
 
           <MagneticWrapper>
             <a href="https://github.com/theAdityaNVS" target="_blank" rel="noopener noreferrer" className={`
-                flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300
+                flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold transition-all duration-500
                 ${isScrolled 
                   ? 'bg-primary text-white hover:bg-primary/90 shadow-[0_0_15px_rgba(99,102,241,0.4)]' 
                   : 'bg-white/10 text-white hover:bg-white/20 border border-white/10 backdrop-blur-sm'

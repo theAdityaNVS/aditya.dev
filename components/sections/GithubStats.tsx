@@ -4,8 +4,22 @@ import TiltCard from '../ui/TiltCard';
 import DecryptedText from '../ui/DecryptedText';
 
 const GithubStats: React.FC = () => {
-  // Hardcoding the username based on your previous config
   const username = "theAdityaNVS"; 
+  
+  // Configuration for stats to ensure they work correctly
+  // using hex '00000000' for transparency is more reliable than 'transparent' string
+  // Added cache_seconds to prevent frequent re-fetching breaking the images
+  const transparency = '00000000'; 
+  const titleColor = '6366f1'; // primary color
+  const textColor = 'cbd5e1'; // slate-300
+  const iconColor = 'ec4899'; // secondary color
+  const ringColor = '06b6d4'; // accent color
+
+  const statsUrl = `https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true&hide_border=true&title_color=${titleColor}&text_color=${textColor}&icon_color=${iconColor}&ring_color=${ringColor}&bg_color=${transparency}&cache_seconds=86400`;
+  
+  const streakUrl = `https://github-readme-streak-stats.herokuapp.com/?user=${username}&hide_border=true&title_color=${titleColor}&text_color=${textColor}&icon_color=${iconColor}&ring_color=${ringColor}&background=${transparency}&stroke=${titleColor}&fire=${iconColor}`;
+  
+  const langUrl = `https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&layout=compact&hide_border=true&title_color=${titleColor}&text_color=${textColor}&icon_color=${iconColor}&bg_color=${transparency}&cache_seconds=86400`;
 
   return (
     <section id="github" className="py-24 relative overflow-hidden">
@@ -31,7 +45,7 @@ const GithubStats: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                  {/* Stats Card */}
                  <TiltCard className="h-full">
-                    <div className="glass-panel p-6 rounded-3xl h-full flex flex-col bg-slate-900/40 border border-white/5 relative group">
+                    <div className="glass-panel p-6 rounded-3xl h-full flex flex-col bg-slate-900/40 border border-white/5 relative group min-h-[250px]">
                          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl"></div>
                          <div className="flex items-center gap-3 mb-6">
                             <div className="p-2 rounded-lg bg-primary/20 text-primary">
@@ -41,9 +55,9 @@ const GithubStats: React.FC = () => {
                          </div>
                          <div className="flex items-center justify-center grow">
                              <img
-                                src={`https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true&theme=transparent&hide_border=true&title_color=6366f1&text_color=cbd5e1&icon_color=ec4899&ring_color=06b6d4&bg_color=00000000`}
+                                src={statsUrl}
                                 alt="Github Stats"
-                                className="w-full h-auto max-w-md"
+                                className="w-full h-auto max-w-md object-contain"
                                 loading="lazy"
                              />
                          </div>
@@ -52,7 +66,7 @@ const GithubStats: React.FC = () => {
 
                  {/* Streak Card */}
                  <TiltCard className="h-full">
-                     <div className="glass-panel p-6 rounded-3xl h-full flex flex-col bg-slate-900/40 border border-white/5 relative group">
+                     <div className="glass-panel p-6 rounded-3xl h-full flex flex-col bg-slate-900/40 border border-white/5 relative group min-h-[250px]">
                          <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl"></div>
                          <div className="flex items-center gap-3 mb-6">
                             <div className="p-2 rounded-lg bg-secondary/20 text-secondary">
@@ -62,9 +76,9 @@ const GithubStats: React.FC = () => {
                          </div>
                          <div className="flex items-center justify-center grow">
                              <img
-                                src={`https://github-readme-streak-stats.herokuapp.com/?user=${username}&theme=transparent&hide_border=true&title_color=6366f1&text_color=cbd5e1&icon_color=ec4899&ring_color=06b6d4&background=00000000`}
+                                src={streakUrl}
                                 alt="Github Streak"
-                                className="w-full h-auto max-w-md"
+                                className="w-full h-auto max-w-md object-contain"
                                 loading="lazy"
                              />
                         </div>
@@ -75,7 +89,7 @@ const GithubStats: React.FC = () => {
             {/* Top Languages */}
              <div className="mt-8">
                  <TiltCard>
-                    <div className="glass-panel p-8 rounded-3xl flex flex-col items-center justify-center bg-slate-900/40 border border-white/5 relative group">
+                    <div className="glass-panel p-8 rounded-3xl flex flex-col items-center justify-center bg-slate-900/40 border border-white/5 relative group min-h-[250px]">
                          <div className="absolute inset-0 bg-gradient-to-r from-accent/5 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl"></div>
                          <div className="flex items-center gap-3 mb-8 self-start">
                             <div className="p-2 rounded-lg bg-accent/20 text-accent">
@@ -83,12 +97,14 @@ const GithubStats: React.FC = () => {
                             </div>
                             <h3 className="text-xl font-bold text-white">Most Used Languages</h3>
                          </div>
-                         <img
-                            src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&layout=compact&theme=transparent&hide_border=true&title_color=6366f1&text_color=cbd5e1&icon_color=ec4899&bg_color=00000000`}
-                            alt="Top Languages"
-                            className="w-full md:w-2/3 h-auto"
-                            loading="lazy"
-                         />
+                         <div className="w-full flex justify-center">
+                            <img
+                                src={langUrl}
+                                alt="Top Languages"
+                                className="w-full md:w-2/3 h-auto object-contain"
+                                loading="lazy"
+                            />
+                         </div>
                     </div>
                  </TiltCard>
             </div>

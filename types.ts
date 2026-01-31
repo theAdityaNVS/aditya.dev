@@ -43,3 +43,11 @@ export interface Message {
   text: string;
   timestamp: Date;
 }
+
+export interface Testimonial {
+  id: string;
+  name: string;
+  role: string;
+  text: string;
+  avatar: string;
+}

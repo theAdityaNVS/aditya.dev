@@ -29,6 +29,7 @@ GUIDELINES:
 `;
 
 let aiClient: GoogleGenAI | null = null;
+const responseCache = new Map<string, string>();
 
 export const initGemini = () => {
   if (!aiClient) {
@@ -39,6 +40,14 @@ export const initGemini = () => {
 
 export const sendMessageToGemini = async (history: { role: 'user' | 'model'; text: string }[], newMessage: string) => {
   const client = initGemini();
+  const cacheKey = newMessage.trim().toLowerCase();
+
+  // Simple caching strategy: If exact message was asked before, return cached response
+  // This saves API tokens and improves speed for common questions
+  if (responseCache.has(cacheKey)) {
+    console.log("Serving from cache:", cacheKey);
+    return responseCache.get(cacheKey)!;
+  }
 
   try {
     const chat = client.chats.create({
@@ -53,7 +62,12 @@ export const sendMessageToGemini = async (history: { role: 'user' | 'model'; tex
     });
 
     const result = await chat.sendMessage({ message: newMessage });
-    return result.text;
+    const responseText = result.text || "I'm having trouble thinking right now.";
+    
+    // Store in cache
+    responseCache.set(cacheKey, responseText);
+    
+    return responseText;
   } catch (error) {
     console.error("Gemini API Error:", error);
     throw error;
