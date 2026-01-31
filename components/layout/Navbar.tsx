@@ -8,7 +8,7 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Reduced threshold to 10 for quicker reaction
+      // Reduced threshold for quicker reaction
       setIsScrolled(window.scrollY > 10);
     };
     window.addEventListener('scroll', handleScroll);
@@ -25,18 +25,22 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 flex justify-center transition-all duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] ${
-        isScrolled ? 'pt-4' : 'pt-6 md:pt-8'
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 flex justify-center transition-all duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1.0)]"
+      style={{
+        // We handle padding via inline styles for smooth interpolation across breakpoints
+        // This prevents the "jump" seen on tablets when switching from tailwind classes
+        paddingTop: isScrolled ? '1rem' : '2rem', // 16px vs 32px
+      }}
     >
       <div
         className="relative flex items-center justify-between transition-all duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1.0)]"
         style={{
-          // Explicitly animating width properties for smoothness
+          // Animating width properties
           width: isScrolled ? '600px' : '100%',
           maxWidth: isScrolled ? '90%' : '80rem', // 80rem = max-w-7xl
           borderRadius: isScrolled ? '9999px' : '0px',
-          padding: isScrolled ? '0.75rem 1.5rem' : '1rem 1.5rem',
+          // Keep vertical padding constant to prevent height jumps
+          padding: '0.75rem 1.5rem', 
           backgroundColor: isScrolled ? 'rgba(2, 6, 23, 0.75)' : 'transparent',
           backdropFilter: isScrolled ? 'blur(20px) saturate(180%)' : 'none',
           borderWidth: '1px',

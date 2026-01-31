@@ -7,19 +7,18 @@ const GithubStats: React.FC = () => {
   const username = "theAdityaNVS"; 
   
   // Configuration for stats to ensure they work correctly
-  // using hex '00000000' for transparency is more reliable than 'transparent' string
-  // Added cache_seconds to prevent frequent re-fetching breaking the images
-  const transparency = '00000000'; 
+  // Using 'transparent' keyword is safer than hex codes for these specific APIs
+  const transparency = 'transparent'; 
   const titleColor = '6366f1'; // primary color
   const textColor = 'cbd5e1'; // slate-300
   const iconColor = 'ec4899'; // secondary color
   const ringColor = '06b6d4'; // accent color
 
-  const statsUrl = `https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true&hide_border=true&title_color=${titleColor}&text_color=${textColor}&icon_color=${iconColor}&ring_color=${ringColor}&bg_color=${transparency}&cache_seconds=86400`;
+  const statsUrl = `https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true&hide_border=true&title_color=${titleColor}&text_color=${textColor}&icon_color=${iconColor}&ring_color=${ringColor}&bg_color=${transparency}`;
   
   const streakUrl = `https://github-readme-streak-stats.herokuapp.com/?user=${username}&hide_border=true&title_color=${titleColor}&text_color=${textColor}&icon_color=${iconColor}&ring_color=${ringColor}&background=${transparency}&stroke=${titleColor}&fire=${iconColor}`;
   
-  const langUrl = `https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&layout=compact&hide_border=true&title_color=${titleColor}&text_color=${textColor}&icon_color=${iconColor}&bg_color=${transparency}&cache_seconds=86400`;
+  const langUrl = `https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&layout=compact&hide_border=true&title_color=${titleColor}&text_color=${textColor}&icon_color=${iconColor}&bg_color=${transparency}`;
 
   return (
     <section id="github" className="py-24 relative overflow-hidden">
