@@ -13,14 +13,14 @@ export default async function handler(req: any, res: any) {
 
     const endpoints: Record<string, string[]> = {
       stats: [
-        `${selfHostedBase}/api?username=${username}&theme=default&show_icons=true&hide_border=true&count_private=true`,
-        `${publicBase}/api?username=${username}&theme=default&show_icons=true&hide_border=true&count_private=true`,
+        `${selfHostedBase}/api?username=${username}&theme=transparent&show_icons=true&hide_border=true&count_private=true`,
+        `${publicBase}/api?username=${username}&theme=transparent&show_icons=true&hide_border=true&count_private=true`,
       ],
       langs: [
-        `${selfHostedBase}/api/top-langs/?username=${username}&theme=default&show_icons=true&hide_border=true&layout=compact`,
-        `${publicBase}/api/top-langs/?username=${username}&theme=default&layout=compact&hide_border=true`,
+        `${selfHostedBase}/api/top-langs/?username=${username}&theme=transparent&show_icons=true&hide_border=true&layout=compact`,
+        `${publicBase}/api/top-langs/?username=${username}&theme=transparent&layout=compact&hide_border=true`,
       ],
-    };
+    }; 
 
     const candidates = endpoints[kind] || endpoints['stats'];
 
