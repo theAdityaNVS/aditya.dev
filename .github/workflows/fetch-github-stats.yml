@@ -1,9 +1,14 @@
 name: "Fetch GitHub Stats"
 
+# Need write permission to push updated SVGs back to the repo
+permissions:
+  contents: write
+
 on:
   schedule:
-    # hourly at minute 0
-    - cron: "0 * * * *"
+    # daily at 00:00 UTC
+    - cron: "0 0 * * *"
+  # Note: GitHub Actions cron uses UTC
   workflow_dispatch: {}
 
 jobs:
@@ -11,6 +16,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # persist the GITHUB_TOKEN so we can push commits
+          persist-credentials: true
 
       - name: Fetch stats and languages SVG
         run: |
@@ -35,10 +43,22 @@ jobs:
             cp public/github-langs-fallback.svg public/github-langs.svg || true
           fi
 
+      - name: Show public dir and git status (debug)
+        run: |
+          echo "Public directory contents:"; ls -la public || true
+          echo "Git status:"; git status --porcelain || true
+          echo "Git diff:"; git --no-pager diff -- public || true
+
       - name: Commit updated SVGs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add public/github-stats.svg public/github-langs.svg || true
           git commit -m "chore: update github stats (automated)" || echo "no changes to commit"
-          git push || echo "push failed"
+          git push origin HEAD || (
+            echo "push failed — trying to open a PR instead"
+            BRANCH="update/github-stats-$(date +%s)"
+            git checkout -b "$BRANCH"
+            git push origin "$BRANCH"
+            gh pr create --title "chore: update github stats (automated)" --body "Automated update of github stats SVGs" --base main || echo "failed to create PR"
+          )
