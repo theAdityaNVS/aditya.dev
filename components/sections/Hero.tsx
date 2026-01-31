@@ -45,7 +45,8 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="about" className="relative min-h-screen flex items-center justify-center pt-20 px-6">
+    // Changed pt-20 to pt-36 for mobile to prevent navbar overlap
+    <section id="about" className="relative min-h-[100dvh] flex items-center justify-center pt-36 md:pt-20 px-6">
       <div className="container mx-auto max-w-7xl">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
           
